@@ -1,9 +1,53 @@
-import { Navbar as NavbarBS, Container } from "react-bootstrap";
+import { Navbar as NavbarBS, Nav, Container, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <NavbarBS>
-      <Container>Nav</Container>
+    <NavbarBS className="bg-white shadow-sm mb-3" sticky="top">
+      <Container>
+        <Nav className="me-auto">
+          <Nav.Link to="/" as={NavLink}>
+            Home
+          </Nav.Link>
+          <Nav.Link to="/store" as={NavLink}>
+            Store
+          </Nav.Link>
+          <Nav.Link to="About" as={NavLink}>
+            About
+          </Nav.Link>
+        </Nav>
+        <Button
+          style={{
+            width: "3rem",
+            height: "3rem",
+            position: "relative",
+          }}
+          variant="outline-primary"
+          className="rounded-circle"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+          </svg>
+          <div
+            className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+            style={{
+              color: "white",
+              width: "1.5rem",
+              height: "1.5rem",
+              position: "absolute",
+              bottom: "0",
+              right: "0",
+              transform: "translate(25%,25%)",
+            }}
+          >
+            3
+          </div>
+        </Button>
+      </Container>
     </NavbarBS>
   );
 };
